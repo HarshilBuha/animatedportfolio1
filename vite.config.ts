@@ -1,26 +1,11 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-import basicSsl from "@vitejs/plugin-basic-ssl";
 
+// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), basicSsl()],
+  plugins: [react()],
   server: {
     host: true,
     port: 5173,
-    https: true,
-  },
-  optimizeDeps: {
-    exclude: ["@react-three/rapier"],
-  },
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          three: ["three"],
-          rapier: ["@react-three/rapier"],
-          r3f: ["@react-three/fiber", "@react-three/drei"],
-        },
-      },
-    },
   },
 });
