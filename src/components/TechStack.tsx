@@ -24,6 +24,12 @@ const imageUrls = [
   "/images/typescript.webp",
   "/images/javascript.webp",
   "/images/firebase.webp",
+  "/images/supabase.png",
+  "/images/redis.png",
+  "/images/cpp.png",
+  "/images/python.png",
+
+  
 ];
 
 // Preload all textures immediately at module load — not waiting until scroll
