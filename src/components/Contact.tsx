@@ -41,20 +41,12 @@ const Contact = () => {
               Linkedin <MdArrowOutward />
             </a>
             <a
-              href="https://x.com"
+              href="https://x.com/harshilbuha3"
               target="_blank"
               data-cursor="disable"
               className="contact-social"
             >
               Twitter <MdArrowOutward />
-            </a>
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Instagram <MdArrowOutward />
             </a>
           </div>
           <div className="contact-box">

@@ -16,6 +16,40 @@ export const personalInfo = {
 
 export const projects = [
   {
+    id: 7,
+    title: "QueueLess",
+    subtitle: "Real-Time Virtual Queue Management System",
+    description:
+      "A full-stack virtual queue management platform that eliminates physical line-waiting. Businesses create and manage queues through dedicated dashboards while customers join remotely and track their position live via WebSockets — with role-based access for users, businesses, and admins.",
+    image: "https://res.cloudinary.com/ds3x2mbi3/image/upload/v1776842616/Screenshot_2026-04-22_125252_berboy.png", // Add your image URL here
+    techStack: [
+      "Next.js",
+      "React 19",
+      "Node.js",
+      "Express.js",
+      "MySQL",
+      "Redis",
+      "Socket.io",
+      "Clerk Auth",
+      "Tailwind CSS",
+      "Framer Motion",
+    ],
+    highlights: [
+      "Real-time queue position tracking via Socket.io WebSockets, updated live for every customer",
+      "Role-based access control with separate secure portals for users, businesses, and admins via Clerk",
+      "Business dashboard to advance queues, manage service times, and handle customers",
+      "MySQL connection pooling and Redis-backed rate limiting for high-performance API throughput",
+      "Responsive minimalist UI with Tailwind CSS v4 and Framer Motion micro-interactions",
+      "Webhook integration via Svix for Clerk auth events on the backend",
+    ],
+    metrics: {
+      realtime: "Live queue updates via WebSocket on every position change",
+      performance: "Redis caching + MySQL connection pooling for optimized API response",
+    },
+    liveLink: "#",
+    githubLink: "#", // Add your GitHub repo URL here
+  },
+  {
     id: 5,
     title: "Ashirwad Jewellers",
     subtitle: "Luxury Jewellery E-Commerce Platform",
@@ -96,6 +130,36 @@ export const projects = [
     },
     liveLink: "#",
     githubLink: "https://github.com/harshilbuha119"
+  },
+  {
+    id: 6,
+    title: "FruitSplash",
+    subtitle: "Fruit-Tapping Game for Children",
+    description:
+      "A React Native fruit-tapping game built for a Cognitii assignment. Children are shown multiple fruits on screen and instructed to tap only the target fruit. The app tracks every interaction — correct, incorrect, and background taps — and saves full session data to Firebase Firestore, including front-camera captures during gameplay.",
+    image: "https://res.cloudinary.com/ds3x2mbi3/image/upload/v1776840436/Html_Body_l8kxjc.png",
+    techStack: [
+      "React Native",
+      "Firebase Firestore",
+      "React Native Reanimated",
+      "Vision Camera",
+      "Orientation Locker",
+      "Gifted Charts",
+    ],
+    highlights: [
+      "4 fruits spawn per second across fixed slots with no consecutive repeat in the same position",
+      "Tracks correct, incorrect & background taps with per-session accuracy stored to Firestore",
+      "Front camera captures a photo every 500ms while target fruit is visible; paths saved to Firestore, cache cleared post-session",
+      "3-2-1-GO! countdown, landscape lock during gameplay, portrait on Home & History screens",
+      "Accuracy trend chart and recent session cards on Home screen via Gifted Charts",
+      "Full Firestore schema: taps array, fruitSpawns array, stats, cameraCaptures per session",
+    ],
+    metrics: {
+      gameplay: "2-minute sessions, 1 fruit batch per second",
+      tracking: "Every tap logged with coordinates, fruit type & target status",
+    },
+    liveLink: "#",
+    githubLink: "https://github.com/HarshilBuha119/Metvy-Assignment-main",
   },
   {
     id: 2,
