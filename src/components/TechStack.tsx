@@ -164,6 +164,12 @@ const TechStack = () => {
   useEffect(() => {
     if (!containerRef.current) return;
 
+    // Trigger a refresh after a short delay to ensure layout is settled
+    // (needed in production builds where CSS may compute later)
+    const refreshTimeout = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 300);
+
     const trigger = ScrollTrigger.create({
       trigger: containerRef.current,
       start: "top 80%",
@@ -174,6 +180,7 @@ const TechStack = () => {
     ScrollTrigger.refresh();
 
     return () => {
+      clearTimeout(refreshTimeout);
       trigger.kill();
     };
   }, []);
@@ -183,13 +190,23 @@ const TechStack = () => {
       <h2> My Techstack</h2>
 
       {/* Canvas stays mounted always — only physics pauses when off-screen.
-          Unmounting/remounting Canvas causes slow WebGL context re-init each time. */}
+          Unmounting/remounting Canvas causes slow WebGL context re-init each time.
+          Inline style is a hard fallback for production builds where className
+          styles may not be applied before the Canvas measures its container. */}
       <Canvas
         dpr={[1, 1.5]}
         gl={{ alpha: true, stencil: false, depth: false, antialias: true }}
         camera={{ position: [0, 0, 20], fov: 32.5, near: 1, far: 100 }}
         onCreated={(state) => (state.gl.toneMappingExposure = 1.5)}
         className="tech-canvas"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          display: "block",
+        }}
       >
         <ambientLight intensity={1.2} />
         <directionalLight position={[20, 20, 25]} intensity={1.5} />
